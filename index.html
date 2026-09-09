@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus Marques — Portfólio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="clouds">
+    <span style="width:120px;height:34px;top:8%;left:8%;"></span>
+    <span style="width:90px;height:26px;top:6%;left:12%;"></span>
+    <span style="width:150px;height:40px;top:14%;left:62%;"></span>
+    <span style="width:100px;height:30px;top:11%;left:70%;"></span>
+  </div>
+  <div class="hills"></div>
+
+  <!-- Desktop icons -->
+  <div class="desktop-icons">
+    <div class="icon" tabindex="0" ondblclick="openWin('pc')" onclick="selectIcon(this)">
+      <div class="glyph">🖥️</div><div class="label">Meu computador</div>
+    </div>
+    <div class="icon" tabindex="0" ondblclick="openWin('about')" onclick="selectIcon(this)">
+      <div class="glyph">🔍</div><div class="label">Sobre mim</div>
+    </div>
+    <div class="icon" tabindex="0" ondblclick="openWin('projects')" onclick="selectIcon(this)">
+      <div class="glyph">📁</div><div class="label">Meus Projetos</div>
+    </div>
+    <div class="icon" tabindex="0" ondblclick="openWin('skills')" onclick="selectIcon(this)">
+      <div class="glyph">📝</div><div class="label">Habilidades.txt</div>
+    </div>
+    <div class="icon" tabindex="0" ondblclick="openWin('terminal')" onclick="selectIcon(this)">
+      <div class="glyph">⬛</div><div class="label">Prompt de Comando</div>
+    </div>
+  </div>
+
+  <!-- ===================== WINDOW: Meu computador ===================== -->
+  <div class="win hidden" id="win-pc" style="width:320px; top:70px; left:120px;">
+    <div class="titlebar" data-drag>
+      <span class="ttl-icon">🖥️</span><span class="ttl-text">Propriedades do Sistema</span>
+      <div class="ttl-btns">
+        <div class="tbtn" onclick="minWin('pc')">_</div>
+        <div class="tbtn close" onclick="closeWin('pc')">✕</div>
+      </div>
+    </div>
+    <div class="win-body plain">
+      <p style="margin-top:0"><b>Sistema:</b> MatheusOS Fullstack Edition</p>
+      <p><b>Processador:</b> Lógica + café ☕ a 3.5 GHz</p>
+      <p><b>Memória:</b> 1 ano de experiência (expansível)</p>
+      <p><b>Localização:</b> Recife — PE</p>
+      <p><b>Status:</b> pronto para novos desafios</p>
+    </div>
+  </div>
+
+  <!-- ===================== WINDOW: Sobre mim ===================== -->
+  <div class="win hidden" id="win-about" style="width:520px; top:64px; left:170px;">
+    <div class="titlebar" data-drag>
+      <span class="ttl-icon">🔍</span><span class="ttl-text">Sobre Mim - Windows Explorer</span>
+      <div class="ttl-btns">
+        <div class="tbtn" onclick="minWin('about')">_</div>
+        <div class="tbtn close" onclick="closeWin('about')">✕</div>
+      </div>
+    </div>
+    <div class="menubar"><span>Arquivo</span><span>Editar</span><span>Exibir</span><span>Favoritos</span><span>Ajuda</span></div>
+    <div class="addressbar">Endereço: <input readonly value="C:\Documentos\Sobre_Mim.html"></div>
+    <div class="win-body">
+      <div class="about-grid">
+        <div class="avatar-block">
+          <div class="avatar">MM</div>
+          <span class="badge">Dev Fullstack Jr</span>
+        </div>
+        <div class="about-text">
+          <h1 class="name">Matheus Marques</h1>
+          <p class="role">Exp: 1 ano · Local: Recife — PE</p>
+          <p>Desenvolvedor Fullstack com paixão por criar experiências digitais performáticas, limpas e nostálgicas. Especializado em transformar problemas complexos em interfaces modulares e robustas.</p>
+
+          <div class="skillbar-row">
+            <div class="skillbar-label"><span>Backend (Node.js / Python / Java)</span></div>
+            <div class="skillbar-track"><div class="skillbar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skillbar-row">
+            <div class="skillbar-label"><span>Frontend (Angular / Django)</span></div>
+            <div class="skillbar-track"><div class="skillbar-fill" style="width:65%"></div></div>
+          </div>
+          <div class="skillbar-row">
+            <div class="skillbar-label"><span>Banco de Dados (PostgreSQL / MySQL)</span></div>
+            <div class="skillbar-track"><div class="skillbar-fill" style="width:78%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WINDOW: Projetos ===================== -->
+  <div class="win hidden" id="win-projects" style="width:560px; top:96px; left:420px;">
+    <div class="titlebar" data-drag>
+      <span class="ttl-icon">📁</span><span class="ttl-text">Meus Projetos - Explorer</span>
+      <div class="ttl-btns">
+        <div class="tbtn" onclick="minWin('projects')">_</div>
+        <div class="tbtn close" onclick="closeWin('projects')">✕</div>
+      </div>
+    </div>
+    <div class="menubar"><span>Arquivo</span><span>Editar</span><span>Exibir</span><span>Favoritos</span><span>Ferramentas</span></div>
+    <div class="explorer-wrap" style="height:340px;">
+      <div class="explorer-nav">
+        <h4>Tarefas de Pasta</h4>
+        <a onclick="location.href='#contato'">✉ Enviar mensagem</a>
+        <a href="https://github.com" target="_blank" rel="noopener">🔗 Ver GitHub</a>
+        <a onclick="showFolder('grid')">🗂 Ver todos os projetos</a>
+      </div>
+      <div class="explorer-main">
+        <div id="proj-grid" class="folder-grid">
+          <div class="proj-card" onclick="openProject('transforme')">
+            <div class="f-icon">📂</div>
+            <div class="f-name">Transforme-se</div>
+          </div>
+          <div class="proj-card" onclick="openProject('tasks')">
+            <div class="f-icon">📂</div>
+            <div class="f-name">API Task Manager</div>
+          </div>
+          <div class="proj-card" onclick="openProject('blog')">
+            <div class="f-icon">📂</div>
+            <div class="f-name">Blog CMS</div>
+          </div>
+        </div>
+
+        <div id="proj-detail-transforme" class="proj-detail">
+          <span class="back-link" onclick="showFolder('grid')">← Voltar</span>
+          <h3>Transforme-se (Do Zero ao Mei)</h3>
+          <p>Projeto de PI voltado a apoiar microempreendedores: cadastro de usuários, controle de saldo e catálogo de cursos, com API própria para consulta dos dados.</p>
+          <div>
+            <span class="tech-pill">Node.js</span><span class="tech-pill">Express</span>
+            <span class="tech-pill">JSON / db.json</span><span class="tech-pill">REST API</span>
+          </div>
+        </div>
+
+        <div id="proj-detail-tasks" class="proj-detail">
+          <span class="back-link" onclick="showFolder('grid')">← Voltar</span>
+          <h3>API Task Manager</h3>
+          <p>API para organização de tarefas com autenticação de usuários, categorias e prazos, pensada para praticar modelagem de banco relacional e boas práticas de rotas REST.</p>
+          <div>
+            <span class="tech-pill">Django</span><span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">JWT</span>
+          </div>
+        </div>
+
+        <div id="proj-detail-blog" class="proj-detail">
+          <span class="back-link" onclick="showFolder('grid')">← Voltar</span>
+          <h3>Blog CMS</h3>
+          <p>Sistema de publicação de posts com painel administrativo em Angular consumindo uma API Node.js, incluindo upload de imagens e editor de texto rico.</p>
+          <div>
+            <span class="tech-pill">Angular</span><span class="tech-pill">Node.js</span>
+            <span class="tech-pill">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== WINDOW: Habilidades.txt ===================== -->
+  <div class="win hidden" id="win-skills" style="width:340px; top:290px; left:480px;">
+    <div class="titlebar" data-drag>
+      <span class="ttl-icon">📝</span><span class="ttl-text">Habilidades.txt - Bloco de Notas</span>
+      <div class="ttl-btns">
+        <div class="tbtn" onclick="minWin('skills')">_</div>
+        <div class="tbtn close" onclick="closeWin('skills')">✕</div>
+      </div>
+    </div>
+    <div class="menubar"><span>Arquivo</span><span>Editar</span><span>Formatar</span><span>Exibir</span><span>Ajuda</span></div>
+    <div class="win-body">
+<div class="notepad-text">=== STACK DE HABILIDADES ===
+
+[Linguagens]
+• Java, JavaScript, Python, SQL
+
+[Frameworks / Libs]
+• Angular, Node.js, Express, Django
+
+[Infra & DB]
+• PostgreSQL, MySQL
+
+[Ferramentas]
+• Git, Figma, VS Code</div>
+    </div>
+  </div>
+
+  <!-- ===================== WINDOW: Terminal ===================== -->
+  <div class="win hidden" id="win-terminal" style="width:460px; top:300px; left:110px;">
+    <div class="titlebar" data-drag>
+      <span class="ttl-icon">⬛</span><span class="ttl-text">Prompt de Comando</span>
+      <div class="ttl-btns">
+        <div class="tbtn" onclick="minWin('terminal')">_</div>
+        <div class="tbtn close" onclick="closeWin('terminal')">✕</div>
+      </div>
+    </div>
+    <div class="win-body" style="padding:0;height:280px;">
+      <div class="terminal-body" id="term-output">
+        <div class="term-input-row" id="term-input-row" style="display:none;">
+          <span class="prompt">C:\Documentos\Matheus&gt;</span>
+          <input id="term-input" type="text" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== START MENU ===================== -->
+  <div class="start-menu" id="start-menu">
+    <div class="start-head">
+      <div class="mini-avatar">MM</div>
+      <div><b>Matheus Marques</b><br><span style="font-size:11px;opacity:.85">Dev Fullstack Jr</span></div>
+    </div>
+    <ul class="start-list">
+      <li onclick="openWin('about'); toggleStart(false)"><span class="g">🔍</span> Sobre mim</li>
+      <li onclick="openWin('projects'); toggleStart(false)"><span class="g">📁</span> Meus Projetos</li>
+      <li onclick="openWin('skills'); toggleStart(false)"><span class="g">📝</span> Habilidades.txt</li>
+      <li onclick="openWin('terminal'); toggleStart(false)"><span class="g">⬛</span> Prompt de Comando</li>
+      <li onclick="location.href='mailto:contato@matheusmarques.dev'"><span class="g">✉️</span> Enviar e-mail</li>
+    </ul>
+    <div class="start-foot">MatheusOS © construído com HTML, CSS &amp; JS</div>
+  </div>
+
+  <!-- ===================== TASKBAR ===================== -->
+  <div class="taskbar">
+    <div class="start-btn" onclick="toggleStart()">
+      <span>🏁</span> Iniciar
+    </div>
+    <div class="taskbar-sep"></div>
+    <div class="taskbar-items" id="taskbar-items"></div>
+    <div class="tray"><span id="clock">00:00</span></div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
