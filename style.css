@@ -36,23 +36,9 @@
 
   /* ---------- Bliss-ish hill background ---------- */
   .hills{
-    position:absolute; left:0; right:0; bottom:44px; height:46%;
-    background:var(--hill-mid);
-    clip-path: path('M0,120 C 200,10 380,90 620,40 C 850,-10 1050,70 1440,20 L1440,400 L0,400 Z');
+    position:absolute; left:0; right:0; bottom:44px; top:54%;
   }
-  .hills::before{
-    content:"";
-    position:absolute; inset:0;
-    background:var(--hill-dark);
-    clip-path: path('M0,170 C 220,90 420,160 680,110 C 900,70 1100,150 1440,90 L1440,400 L0,400 Z');
-  }
-  .hills::after{
-    content:"";
-    position:absolute; left:0; right:0; top:-6%; height:30%;
-    background:var(--hill-light);
-    clip-path: path('M0,60 C 240,10 460,55 700,25 C 950,-10 1150,40 1440,10 L1440,90 L0,90 Z');
-    opacity:.55;
-  }
+  .hills svg{ display:block; }
   .clouds span{
     position:absolute; background:rgba(255,255,255,.85); border-radius:50%;
     filter:blur(1px);
