@@ -120,6 +120,11 @@ h1{
 
 .sobre{
   padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sobre-titulo{
@@ -144,6 +149,11 @@ h1{
 
 .projetos{
   padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .projetos-imagem{
@@ -179,6 +189,9 @@ h1{
   overflow: hidden;
   transition: all 0.5s ease;
   cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .projetos-info{
@@ -213,6 +226,7 @@ h1{
   border: 1px solid var(--glass);
   border-radius: 16px;
   margin-bottom: 1.5rem;
+  margin-top: 3rem;
 }
 
 .grupo-form{
@@ -251,6 +265,32 @@ h1{
   box-shadow: 0 5px 15px rgba(79, 70, 229, 0.2);
 }
 
+.redes-sociais{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  border: 1px solid var(--glass);
+  border-radius: 16px;
+}
+
+.icon-github,
+.icon-linkedin{
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.github:hover .icon-github,
+.linkedin:hover .icon-linkedin{
+  transform: translateY(-4px);
+}
+
 @keyframes flutuando {
   0%, 100%{
     transform: translateY(0);
@@ -261,12 +301,19 @@ h1{
   }
 }
 
+.habilidades{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .habilidades-caixa{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin-left: 22rem;
 }
 
 .habilidade-card{
