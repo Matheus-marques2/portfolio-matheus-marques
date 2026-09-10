@@ -23,11 +23,38 @@ body{
   color: var(--claro);
 }
 
+body::before,
+body::after{
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+body::before{
+  top: -150px;
+  left: -100px;
+  background: var(--primaria);
+  animation: flutuando 10s ease-in-out infinite;
+}
+
+body::after{
+  bottom: -150px;
+  right: -100px;
+  background: var(--scundaria);
+  animation: flutuando 12s ease-in-out infinite reverse;
+}
+
 .nav-bar{
   position: fixed;
   background-color: rgba(15, 23, 42, 0.8);
   width: 100%;
-  height: 7%;
+  height: 5%;
   z-index: 100;
   top: 0;
   padding: 0.7rem;
@@ -174,7 +201,7 @@ h1{
 .contatos-titulo{
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .formulario-contato{
@@ -185,6 +212,7 @@ h1{
   padding: 2rem;
   border: 1px solid var(--glass);
   border-radius: 16px;
+  margin-bottom: 1.5rem;
 }
 
 .grupo-form{
@@ -231,4 +259,48 @@ h1{
   50%{
     transform: translateY(-20px);
   }
+}
+
+.habilidades-caixa{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin-left: 22rem;
+}
+
+.habilidade-card{
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--glass);
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6px 0;
+}
+
+.habilidades-img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.habilidade-caixa-texto{
+  padding: 1.5rem;
+}
+
+.habilidade-info{
+  color: var(--claro);
+  margin-bottom: 5px;
+}
+
+.habilidade-titulo{
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
 }
